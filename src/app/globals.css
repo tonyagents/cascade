@@ -1,26 +1,291 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@plugin "@tailwindcss/typography";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-mono:
+    ui-monospace, "SF Mono", SFMono-Regular, Menlo, Monaco, "Liberation Mono",
+    monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-brand: var(--brand);
+  --color-brand-soft: var(--brand-soft);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.53 0.27 296);
+  --primary-foreground: oklch(0.985 0 0);
+  --brand: oklch(0.53 0.27 296);
+  --brand-soft: oklch(0.62 0.21 296);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+.dark {
+  /* Rich, premium near-black with a faint cool-purple cast. */
+  --background: oklch(0.155 0.014 286);
+  --foreground: oklch(0.97 0.004 286);
+  --card: oklch(0.198 0.016 286);
+  --card-foreground: oklch(0.97 0.004 286);
+  --popover: oklch(0.205 0.017 286);
+  --popover-foreground: oklch(0.97 0.004 286);
+  --primary: oklch(0.66 0.21 296);
+  --primary-foreground: oklch(0.99 0 0);
+  --brand: oklch(0.72 0.19 296);
+  --brand-soft: oklch(0.8 0.13 296);
+  --secondary: oklch(0.245 0.016 286);
+  --secondary-foreground: oklch(0.97 0.004 286);
+  --muted: oklch(0.245 0.014 286);
+  --muted-foreground: oklch(0.72 0.022 286);
+  --accent: oklch(0.27 0.022 290);
+  --accent-foreground: oklch(0.98 0.003 286);
+  --destructive: oklch(0.7 0.19 22);
+  --border: oklch(1 0 0 / 9%);
+  --input: oklch(1 0 0 / 12%);
+  --ring: oklch(0.66 0.21 296 / 60%);
+  --chart-1: oklch(0.72 0.19 296);
+  --chart-2: oklch(0.62 0.16 286);
+  --chart-3: oklch(0.55 0.13 276);
+  --chart-4: oklch(0.5 0.1 266);
+  --chart-5: oklch(0.42 0.08 286);
+  --sidebar: oklch(0.198 0.016 286);
+  --sidebar-foreground: oklch(0.97 0.004 286);
+  --sidebar-primary: oklch(0.66 0.21 296);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.27 0.022 290);
+  --sidebar-accent-foreground: oklch(0.98 0.003 286);
+  --sidebar-border: oklch(1 0 0 / 9%);
+  --sidebar-ring: oklch(0.66 0.21 296 / 60%);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+  ::selection {
+    background: color-mix(in oklch, var(--brand) 22%, transparent);
+  }
+  /* Slimmer, calmer scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in oklch, var(--foreground) 18%, transparent)
+      transparent;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ---------------------------------------------------------------------------
+   Motion system — buttery, Apple-grade easing. Everything respects
+   prefers-reduced-motion (see the media query at the bottom).
+--------------------------------------------------------------------------- */
+@keyframes cascade-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px) scale(0.985);
+    filter: blur(2px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+    filter: blur(0);
+  }
+}
+@keyframes cascade-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes cascade-shimmer {
+  to {
+    background-position: 200% 0;
+  }
+}
+@keyframes cascade-pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklch, var(--brand) 38%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 9px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+.animate-fade-up {
+  animation: cascade-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-pulse-ring {
+  animation: cascade-pulse-ring 2.2s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+.caret-blink {
+  animation: cascade-blink 1.05s steps(1, end) infinite;
+}
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--muted-foreground) 0%,
+    var(--brand) 45%,
+    var(--brand-soft) 55%,
+    var(--muted-foreground) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: cascade-shimmer 1.8s linear infinite;
+}
+/* Calm, symmetric background wash — soft purple glow up top fading to a
+   neutral base. Renders crisply (no heavy blur), balanced left-to-right. */
+.app-bg {
+  background:
+    radial-gradient(
+      58% 42% at 50% -6%,
+      color-mix(in oklch, var(--brand) 15%, transparent),
+      transparent 72%
+    ),
+    radial-gradient(
+      38% 30% at 88% 6%,
+      color-mix(in oklch, var(--brand-soft) 10%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      34% 28% at 10% 4%,
+      color-mix(in oklch, var(--brand) 8%, transparent),
+      transparent 70%
+    ),
+    linear-gradient(
+      to bottom,
+      var(--background),
+      color-mix(in oklch, var(--muted) 45%, var(--background))
+    );
+}
+.dark .app-bg {
+  background:
+    radial-gradient(
+      62% 46% at 50% -8%,
+      color-mix(in oklch, var(--brand) 26%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      42% 34% at 86% 3%,
+      color-mix(in oklch, var(--brand-soft) 16%, transparent),
+      transparent 68%
+    ),
+    radial-gradient(
+      38% 30% at 12% 2%,
+      color-mix(in oklch, var(--brand) 13%, transparent),
+      transparent 68%
+    ),
+    var(--background);
+}
+
+/* Smooth height-based expand/collapse without JS measuring */
+.collapsible {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition: grid-template-rows 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.collapsible[data-collapsed="true"] {
+  grid-template-rows: 0fr;
+}
+.collapsible > div {
+  overflow: hidden;
+  min-height: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }

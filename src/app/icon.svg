@@ -1,0 +1,33 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="2" y1="0" x2="30" y2="32" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a78bfa"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#ffffff" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip"><rect width="32" height="32" rx="9"/></clipPath>
+  </defs>
+  <rect width="32" height="32" rx="9" fill="url(#bg)"/>
+  <g clip-path="url(#clip)">
+    <rect width="32" height="15" fill="url(#glow)"/>
+    <!-- mountains -->
+    <path d="M22 11 L31 26 L14 26 Z" fill="#ffffff" fill-opacity="0.2"/>
+    <path d="M12 6.5 L23.5 26 L1.5 26 Z" fill="#ffffff" fill-opacity="0.38"/>
+    <!-- snow cap -->
+    <path d="M12 6.5 L9.6 11 L14.4 11 Z" fill="#ffffff"/>
+    <!-- avalanche: billowing snow tumbling down the right slope -->
+    <g fill="#ffffff">
+      <circle cx="12.7" cy="10.4" r="1.3"/>
+      <circle cx="13.8" cy="13" r="1.9"/>
+      <circle cx="15.1" cy="16.1" r="2.4"/>
+      <circle cx="16.8" cy="19.5" r="2.9"/>
+      <circle cx="18.8" cy="23" r="3.3"/>
+    </g>
+    <!-- flung debris -->
+    <circle cx="22.6" cy="24" r="1.05" fill="#ffffff" fill-opacity="0.95"/>
+    <circle cx="24.4" cy="25.7" r="0.72" fill="#ffffff" fill-opacity="0.78"/>
+  </g>
+</svg>
