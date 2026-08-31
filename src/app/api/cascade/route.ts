@@ -70,7 +70,7 @@ export async function POST(req: NextRequest) {
     system: stage.system,
     prompt: context,
     temperature: 0.7,
-    maxOutputTokens: 2500,
+    maxOutputTokens: 5000,
     onError: ({ error }) => {
       capturedError = error;
     },
