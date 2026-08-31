@@ -82,7 +82,7 @@ Click **"Use my own templates"** and paste your real GTM / creative brief / BRD 
 content format (Markdown headings, placeholders, sections). Each stage then
 follows *your* structure exactly while still being grounded in the prior stages.
 
-## Why it matters for MoonPay
+## Why it matters for Nova
 
 We ship agent products fast, and GTM is the bottleneck that doesn't scale with
 eng. Cascade turns the idea → launch-docs cycle from weeks into minutes while

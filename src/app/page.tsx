@@ -383,7 +383,7 @@ export default function Home() {
         )}
 
         <footer className="mt-16 text-center text-xs text-muted-foreground/60">
-          Built for MoonPay · idea → launch docs in minutes, kept in sync
+          Built for Nova · idea → launch docs in minutes, kept in sync
         </footer>
       </div>
     </div>

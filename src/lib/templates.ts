@@ -1,6 +1,6 @@
 import type { StageId } from "@/lib/stages";
 
-// Baked-in default templates, derived from MoonPay's real GTM / Creative Brief /
+// Baked-in default templates, derived from Nova's real GTM / Creative Brief /
 // BRD formats. These are the canonical structures every document is built from —
 // the user doesn't paste them each run; they're pre-filled and applied
 // automatically. The runtime template UI starts from these, so they can still be
@@ -87,7 +87,7 @@ const BRIEF_TEMPLATE = `## Due Date
 - **Main value prop to showcase:** [the core thing to demonstrate, plus the fast path to show, e.g. Download → Setup → Automate → Execute]
 - **Key creative showcase:** [the specific actions / outcomes to feature]
 - **Main audience:** [who]
-- **Tone / voice:** [adjectives — keep MoonPay's voice: agentic, smart, crypto-native]
+- **Tone / voice:** [adjectives — keep Nova's voice: agentic, smart, crypto-native]
 - **Visual references / inspiration:** [links + 1–2 lines of product context]
 
 ## Contained Assets
